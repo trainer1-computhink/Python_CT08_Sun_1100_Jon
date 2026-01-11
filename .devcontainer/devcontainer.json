@@ -1,0 +1,16 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/python:3.9",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-vsliveshare.vsliveshare",
+            ],
+            "settings": {
+                "editor.fontSize": 16 //big
+            }
+        }
+    },
+    "postCreateCommand": "pip install -r requirements.txt && python -m ipykernel install --user --name devcontainer_kernel --display-name 'Python (Dev Container)'",
+    "forwardPorts": []
+}
