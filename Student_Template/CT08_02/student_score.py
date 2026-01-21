@@ -12,39 +12,34 @@ grades = [['Angie', 'Female', [['English', 72], ['Mathematics', 73], ['Additiona
 # 8: Social Studies
 # 9: COmputing
 students = grades
-no_of_student = len(grades)
 no_of_subject = len(students[0][2])
 
-def sort_grades_of_subjec_descending(sub_ind):
+def sort_grades_of_subjec_descending(students,sub_ind):
+    no_of_student = len(students)
     for i in range(no_of_student):
         for j in range(no_of_student - i - 1):
             if students[j][2][sub_ind][1] < students[j+1][2][sub_ind][1]:
                 students[j],students[j+1] = students[j+1],students[j]
 
-
-# sort_grades_of_subjec_descending(0)
-
-def generate_top_three_student(sub_ind):
+def generate_top_three_student(students,sub_ind):
     print(f"Top 3 for subject: {students[0][2][sub_ind][0]}")
-    n = 3
     rank = 1
-    ranks = []
-    for j in range(len(students)-1):
-        ranks.append(rank)
-        if students[j][2][sub_ind][1] == students[j+1][2][sub_ind][1]:
-            n += 1
-        else:
-            rank +=1
-        if rank == 4:
+    i = 0
+    while True:
+        print(f"Top {rank} Score {students[i][2][sub_ind][1]} {students[i][0]} ")
+         # If we're at the last student, stop (prevents i+1 crash)
+        if i == len(students) - 1:
+            print("-------------------------------------------------")
             break
 
-    for i in range(n):
-        print(f"Top {ranks[i]} Score {students[i][2][sub_ind][1]} {students[i][0]} ")
-
-    print("-------------------------------------------------")
+        if students[i][2][sub_ind][1] != students[i+1][2][sub_ind][1]:
+            rank +=1
+         #   Rank increases only when score changes
+        if rank > 3:
+            print("-------------------------------------------------")
+            break
+        i += 1
 
 for i in range(no_of_subject):
-    sort_grades_of_subjec_descending(i)
-    generate_top_three_student(i)
-
-    
+    sort_grades_of_subjec_descending(students,i)
+    generate_top_three_student(students,i)
