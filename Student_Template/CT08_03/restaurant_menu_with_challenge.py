@@ -12,8 +12,8 @@ menu = {
 
 orders = {}
 
-TITLE = "Order Summary"
-PRICE_COL_WIDTH = 10  # enough space for "$" + price formatting
+title = "Order Summary"
+price_col_width = 10  # enough space for "$" + price formatting
 
 
 def calc_item_col_width(menu_dict):
@@ -28,19 +28,19 @@ def calc_item_col_width(menu_dict):
     return longest + 2
 
 
-ITEM_COL_WIDTH = calc_item_col_width(menu)
-RECEIPT_WIDTH = ITEM_COL_WIDTH + 3 + 1 + PRICE_COL_WIDTH  # item + " : " + "$" + price col
-if RECEIPT_WIDTH < len(TITLE):
-    RECEIPT_WIDTH = len(TITLE)
+item_col_width = calc_item_col_width(menu)
+receipt_width = item_col_width + 3 + 1 + price_col_width  # item + " : " + "$" + price col
+if receipt_width < len(title):
+    receipt_width = len(title)
 
 
 def print_line():
-    print("-" * RECEIPT_WIDTH)
+    print("-" * receipt_width)
 
 
 def format_menu_entry(item_name, price):
     # item_name stored in lowercase; display nicely using title()
-    print(f"{item_name.title():<{ITEM_COL_WIDTH}} : ${price:>{PRICE_COL_WIDTH}.2f}")
+    print(f"{item_name.title():<{item_col_width}} : ${price:>{price_col_width}.2f}")
 
 
 def ask_yes_no(prompt):
@@ -113,7 +113,7 @@ while True:
 
 # Print receipt
 total = 0.0
-print(f"\n{TITLE:^{RECEIPT_WIDTH}}")
+print(f"\n{title:^{receipt_width}}")
 print_line()
 
 for item_name, price in orders.items():
