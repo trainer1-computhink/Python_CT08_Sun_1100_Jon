@@ -1,0 +1,98 @@
+================================================
+School Attendance System — Graded Challenge Tasks
+=================================================
+
+Task 1 (Foundation — Input Validation & Control Flow)
+Goal: Make the program robust and exam-safe.
+Requirements:
+- Menu choice must NOT crash if user enters letters or symbols.
+- Attendance input must only accept y / n (case-insensitive).
+- Attendance threshold must be between 0 and 100.
+Done when:
+- Program keeps running correctly even with invalid input.
+
+Focus skills: while loop, boolean logic, input validation.
+
+
+Task 2 (Foundation — Attendance Calculation Logic)
+Goal: Strengthen loop-based computation.
+Requirements:
+- Rewrite attendance_percentage() WITHOUT using count().
+- Use a loop and accumulator variable only.
+- Display:
+  student name
+  present lessons
+  total lessons
+  percentage (2 decimal places)
+Done when:
+- Student understands how percentages are derived step-by-step.
+
+Focus skills: for loop, accumulator pattern, arithmetic.
+
+
+Task 3 (Intermediate — Class Statistics)
+Goal: Work with nested loops and aggregate data.
+Requirements:
+- Add a menu option: “View Class Statistics”
+- Display:
+  - Class average attendance %
+  - Highest attendance student(s)
+  - Lowest attendance student(s)
+Rules:
+- Do NOT hardcode values.
+- Must reuse attendance_percentage().
+Done when:
+- Output adapts correctly as attendance data changes.
+
+Focus skills: nested loops, min/max logic, list handling.
+
+
+Task 4 (Intermediate — Student Management)
+Goal: Modify dictionary data safely.
+Requirements:
+- Add menu options:
+  - Add new student
+  - Remove existing student
+- Names must be case-insensitive.
+- Prevent duplicate student names.
+Done when:
+- Student list can be edited without breaking the system.
+
+Focus skills: dictionaries, key checks, defensive programming.
+
+Task 5 (Advanced — Consecutive Absence Detection)
+Goal: Detect patterns, not just totals.
+Requirements:
+- Add function: detect_consecutive_absences(student, N)
+- Flag student if absent N times in a row.
+- Add menu option to list flagged students.
+Rules:
+- Use loops only (no slicing shortcuts).
+Done when:
+- System detects patterns like: False, False, False.
+
+Focus skills: state tracking, loop logic, condition sequencing.
+
+
+Task 6 (Advanced — File Saving & Loading)
+Goal: Introduce real-world persistence.
+Requirements:
+- Save attendance_dict to a JSON file.
+- Load attendance_dict from the file.
+- Add menu options: Save / Load.
+Rules:
+- Data must persist after restarting the program.
+Done when:
+- Program continues from last saved state.
+
+Focus skills: file I/O, dictionaries, real-world application.
+
+
+(Optional Extension — For Fast Finishers)
+Goal: Stretch thinking beyond syllabus.
+Choose ONE:
+A) Add “Late” attendance and decide how it affects percentage.
+B) Export a CSV attendance report.
+C) Refactor repeated input validation into reusable functions.
+
+Optional stretch — not required for all students.
