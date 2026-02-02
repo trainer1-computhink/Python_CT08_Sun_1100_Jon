@@ -1,0 +1,116 @@
+=================================================
+Quiz Grading System — Advanced Challenge Questions
+(For Fastest Students | No File I/O)
+=================================================
+
+Task 1 — Uneven Answer Lists (Defensive Programming)
+Some students did not answer all questions.
+Modify grade_all_students() so that:
+- If a student has fewer answers than the answer key, missing answers are treated as wrong.
+- If a student has more answers than the answer key, extra answers are ignored.
+- The program must NOT crash.
+Done when:
+- All students are graded correctly even with uneven answer lists.
+
+
+Task 2 — Question Weighting (Parallel Lists)
+Each question carries different marks.
+Example:
+answer_key = ["A", "B", "B", "D"]
+question_marks = [2, 1, 3, 4]
+
+Modify grade_all_students() so that:
+- A correct answer adds the corresponding marks.
+- An incorrect or missing answer adds 0.
+- Total score is based on marks, not number of correct answers.
+Done when:
+- Scores change correctly if question marks are modified.
+
+
+Task 3 — Percentage + Grade Assignment
+Convert each student’s score into:
+- Total score
+- Percentage score
+- Letter grade
+
+Grade boundaries:
+- ≥ 75% → A
+- ≥ 60% → B
+- ≥ 50% → C
+- else → D
+
+Rules:
+- Total possible marks must be calculated dynamically.
+- Output example:
+  john : 6/8 (75%) Grade: A
+Done when:
+- Grade changes correctly when marks or answer key length change.
+
+
+Task 4 — Class Performance Analysis
+Add a menu option: “Class Performance Summary”.
+Display:
+- Class average score (percentage)
+- Number of students above average
+- Number of students below average
+- Number of students who scored full marks
+Rules:
+- Must reuse existing functions where possible.
+- No hardcoded values.
+Done when:
+- Summary adapts automatically as data changes.
+
+
+Task 5 — Hardest Question Detection (Nested Loops)
+Identify the hardest question in the quiz.
+Definition:
+- The question with the highest number of wrong answers.
+
+Output example:
+Hardest Question: Q2 (3 students got it wrong)
+
+Rules:
+- If there is a tie, list all hardest questions.
+- Question numbering starts from 1.
+Done when:
+- Output updates correctly if student answers change.
+
+
+Task 6 — Consistency Check (Pattern Detection)
+Detect students with inconsistent performance.
+Definition:
+- Student answered at least 80% of the first half correctly
+- Student answered 0% of the second half correctly
+
+Output example:
+Inconsistent performance detected: alice
+
+Rules:
+- Must work for both even and odd number of questions.
+- Use loops and conditions only.
+Done when:
+- Program flags students based on pattern, not hardcoded positions.
+
+
+Task 7 — Smart Ranking System
+Rank students by score.
+Rules:
+- Highest score → Rank 1
+- Students with the same score share the same rank
+- Next rank is skipped accordingly
+Example:
+Scores: [10, 10, 8, 6]
+Ranks:  [1, 1, 3, 4]
+
+Output example:
+1. jane (10)
+1. bob (10)
+3. john (8)
+4. alice (6)
+
+Done when:
+- Ranking updates correctly if scores change.
+
+=================================================
+End of Advanced Challenge Set
+=================================================
