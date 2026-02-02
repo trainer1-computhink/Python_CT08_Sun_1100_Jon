@@ -115,13 +115,13 @@ def take_attendance(class_attendance):
 
 
 # ============================================================
-# Task 2 — View Attendance (✅/❌) (Solution)
+# Task 2 — View Attendance (Present/Absent) (Solution)
 # ============================================================
 
 def format_attendance_list(record):
     out = []
     for was_present in records:
-        out.append("✅" if was_present else "❌")
+        out.append("Present" if was_present else "Absent")
     return " ".join(out)
 
 
