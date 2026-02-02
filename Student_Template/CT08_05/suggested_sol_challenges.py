@@ -1,12 +1,3 @@
-Highlight the text in green to see the solution!
-
-# ============================================================
-# School Attendance System — FULL SOLUTION (Tasks 1–6)
-# Target: Secondary 2–3
-# Style: procedural + functions, defensive input handling
-# Tabs: 4 spaces
-# ============================================================
-
 import json
 import os
 
@@ -36,7 +27,7 @@ def normalize_name(name: str) -> str:
     return name.strip().lower()
 
 
-def ask_int_range(prompt: str, min_val: int, max_val: int) -> int:
+def ask_int_range(prompt, min_val, max_val):
     while True:
         raw = input(prompt).strip()
         if raw.isdigit():
@@ -46,7 +37,7 @@ def ask_int_range(prompt: str, min_val: int, max_val: int) -> int:
         print(f"Invalid. Enter a number from {min_val} to {max_val}.")
 
 
-def ask_float_range(prompt: str, min_val: float, max_val: float) -> float:
+def ask_float_range(prompt, min_val, max_val):
     while True:
         raw = input(prompt).strip()
         try:
@@ -58,7 +49,7 @@ def ask_float_range(prompt: str, min_val: float, max_val: float) -> float:
         print(f"Invalid. Enter a number from {min_val} to {max_val}.")
 
 
-def ask_yes_no(prompt: str) -> bool:
+def ask_yes_no(prompt):
     # Accept y/n/yes/no/1/0 (case-insensitive)
     while True:
         raw = input(prompt).strip().lower()
@@ -73,7 +64,7 @@ def ask_yes_no(prompt: str) -> bool:
 # Task 2 — Attendance Percentage (Loop + accumulator) (Solution)
 # ============================================================
 
-def attendance_percentage(student_name: str, class_attendance: dict) -> float | None:
+def attendance_percentage(student_name, class_attendance):
     student_name = normalize_name(student_name)
     if student_name not in class_attendance:
         print("Student name not found.")
@@ -93,7 +84,7 @@ def attendance_percentage(student_name: str, class_attendance: dict) -> float | 
     return round(pct, 2)
 
 
-def present_total(student_name: str, class_attendance: dict) -> tuple[int, int] | None:
+def present_total(student_name, class_attendance)
     student_name = normalize_name(student_name)
     if student_name not in class_attendance:
         return None
@@ -109,7 +100,7 @@ def present_total(student_name: str, class_attendance: dict) -> tuple[int, int] 
 # Task 2 — Take Attendance (validated y/n) (Solution)
 # ============================================================
 
-def take_attendance(class_attendance: dict) -> dict:
+def take_attendance(class_attendance):
     print("Taking class attendance now...")
 
     # Optional: enforce consistent lesson lengths (all students same number of lessons)
@@ -127,14 +118,14 @@ def take_attendance(class_attendance: dict) -> dict:
 # Task 2 — View Attendance (✅/❌) (Solution)
 # ============================================================
 
-def format_attendance_list(records: list[bool]) -> str:
+def format_attendance_list(record):
     out = []
     for was_present in records:
         out.append("✅" if was_present else "❌")
     return " ".join(out)
 
 
-def view_attendance(class_attendance: dict) -> None:
+def view_attendance(class_attendance):
     print("\n--- All Attendances ---")
     for student, records in class_attendance.items():
         print(f"{student:<10} : {format_attendance_list(records)}")
@@ -144,7 +135,7 @@ def view_attendance(class_attendance: dict) -> None:
 # Task 3 — Class Statistics (Solution)
 # ============================================================
 
-def class_statistics(class_attendance: dict) -> None:
+def class_statistics(class_attendance):
     print("\n--- Class Statistics ---")
 
     if len(class_attendance) == 0:
@@ -190,7 +181,7 @@ def class_statistics(class_attendance: dict) -> None:
 # Task 4 — Add/Remove Student (Solution)
 # ============================================================
 
-def get_current_sessions_count(class_attendance: dict) -> int:
+def get_current_sessions_count(class_attendance):
     # Assume most students have the same number of lessons;
     # Use the max length as "current sessions"
     max_len = 0
@@ -200,7 +191,7 @@ def get_current_sessions_count(class_attendance: dict) -> int:
     return max_len
 
 
-def add_student(class_attendance: dict) -> None:
+def add_student(class_attendance):
     print("\n--- Add Student ---")
     name = normalize_name(input("Enter new student name: "))
 
@@ -220,7 +211,7 @@ def add_student(class_attendance: dict) -> None:
     print(f"Added {name}. (Initialized with {sessions} past session(s) as absent.)")
 
 
-def remove_student(class_attendance: dict) -> None:
+def remove_student(class_attendance):
     print("\n--- Remove Student ---")
     name = normalize_name(input("Enter student name to remove: "))
 
@@ -240,7 +231,7 @@ def remove_student(class_attendance: dict) -> None:
 # Task 5 — Consecutive Absence Detection (Solution)
 # ============================================================
 
-def has_consecutive_absences(records: list[bool], n: int) -> bool:
+def has_consecutive_absences(records, n)
     # Must use loop, no slicing shortcuts
     streak = 0
     for was_present in records:
@@ -253,7 +244,7 @@ def has_consecutive_absences(records: list[bool], n: int) -> bool:
     return False
 
 
-def list_consecutive_absences(class_attendance: dict, n: int) -> list[str]:
+def list_consecutive_absences(class_attendance, n):
     flagged = []
     for student, records in class_attendance.items():
         if has_consecutive_absences(records, n):
@@ -265,7 +256,7 @@ def list_consecutive_absences(class_attendance: dict, n: int) -> list[str]:
 # Task 3/4 — Low Attendance Notification (kept + improved) (Solution)
 # ============================================================
 
-def notify_low_attendance(class_attendance: dict, threshold: float) -> list[str]:
+def notify_low_attendance(class_attendance, threshold)
     warnings = []
     for student in class_attendance:
         pct = attendance_percentage(student, class_attendance)
@@ -282,13 +273,13 @@ def notify_low_attendance(class_attendance: dict, threshold: float) -> list[str]
 DATA_FILE = "attendance.json"
 
 
-def save_data(class_attendance: dict, filename: str = DATA_FILE) -> None:
+def save_data(class_attendance, filename):
     with open(filename, "w", encoding="utf-8") as f:
         json.dump(class_attendance, f, indent=4)
     print(f"Saved to {filename}.")
 
 
-def load_data(filename: str = DATA_FILE) -> dict | None:
+def load_data(filename):
     if not os.path.exists(filename):
         print(f"No save file found: {filename}")
         return None
@@ -311,7 +302,7 @@ def load_data(filename: str = DATA_FILE) -> dict | None:
 # Menu System — integrates Tasks 1–6 (Solution)
 # ============================================================
 
-def menu_system(class_attendance: dict) -> None:
+def menu_system(class_attendance):
     print("Welcome to the School Attendance System!")
 
     while True:
