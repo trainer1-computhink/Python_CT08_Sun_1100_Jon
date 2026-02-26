@@ -1,0 +1,342 @@
+============================================================
+PYTHON REVISION QUIZ
+Topics:
+- Functions
+- Dictionaries
+- Combining Functions & Dictionaries
+============================================================
+
+------------------------------------------------------------
+SECTION A: 10 MCQ (Conceptual – Functions & Dictionaries)
+------------------------------------------------------------
+
+1. What does the keyword `return` do in a function?
+A) Prints a value
+B) Stops the function and sends a value back
+C) Creates a variable
+D) Repeats the function
+
+2. Which of the following defines a function correctly?
+A) function add(a, b):
+B) def add(a, b):
+C) define add(a, b):
+D) def add[a, b]:
+
+3. What happens if a function has no return statement?
+A) It gives an error
+B) It returns 0
+C) It returns None
+D) It returns False
+
+4. Which is the correct way to create a dictionary?
+A) d = []
+B) d = ()
+C) d = {}
+D) d = ""
+
+5. What does dictionary.get("key") do?
+A) Deletes the key
+B) Returns value or None if key not found
+C) Adds a new key
+D) Returns all keys
+
+6. What does dict.keys() return?
+A) A list of values
+B) All key-value pairs
+C) All keys
+D) The first key only
+
+7. What is a parameter?
+A) A value returned from function
+B) A variable inside function definition
+C) A printed message
+D) A dictionary key
+
+8. What is scope?
+A) The range where a variable can be used
+B) A loop type
+C) A dictionary method
+D) A function call
+
+9. How do you loop through dictionary keys?
+A) for k in dict:
+B) for k in dict.keys():
+C) Both A and B
+D) for k in dict.values():
+
+10. What is returned by this function?
+def greet():
+    print("Hello")
+
+A) "Hello"
+B) None
+C) greet
+D) Error
+
+
+------------------------------------------------------------
+SECTION B: 10 MCQ (Predict the Output)
+------------------------------------------------------------
+
+11.
+def add(a, b):
+    return a + b
+print(add(2, 3))
+A) 23
+B) 5
+C) None
+D) Error
+
+12.
+d = {"a": 10, "b": 20}
+print(d["a"])
+A) a
+B) 10
+C) 20
+D) Error
+
+13.
+d = {"x": 5}
+print(d.get("y"))
+A) y
+B) 0
+C) None
+D) Error
+
+14.
+def test():
+    return 5
+    return 10
+print(test())
+A) 10
+B) 5
+C) None
+D) Error
+
+15.
+x = 5
+def change():
+    x = 10
+change()
+print(x)
+A) 10
+B) 5
+C) None
+D) Error
+
+16.
+d = {"a": 1, "b": 2}
+for k in d:
+    print(k)
+A) 1 2
+B) a b
+C) a:1 b:2
+D) Error
+
+17.
+def multiply(x):
+    return x * 2
+print(multiply(4))
+A) 8
+B) 4
+C) 6
+D) Error
+
+18.
+d = {"a": 3}
+d["a"] = 7
+print(d["a"])
+A) 3
+B) 7
+C) None
+D) Error
+
+19.
+def greet(name="Tom"):
+    return name
+print(greet())
+A) Tom
+B) None
+C) Error
+D) greet
+
+20.
+print(len({"a":1,"b":2}))
+A) 1
+B) 2
+C) 3
+D) Error
+
+
+------------------------------------------------------------
+SECTION C: 10 MCQ (Function Calling Logic)
+------------------------------------------------------------
+
+21.
+def square(x):
+    return x*x
+print(square(3))
+A) 6
+B) 9
+C) 3
+D) Error
+
+22.
+def add(a,b):
+    return a+b
+print(add(2, add(1,1)))
+A) 4
+B) 5
+C) 6
+D) Error
+
+23.
+def show():
+    return "Hi"
+print(show() + "!")
+A) Hi!
+B) Hi
+C) !
+D) Error
+
+24.
+def f(x):
+    print(x)
+print(f(5))
+A) 5
+B) None
+C) 5 None
+D) Error
+
+25.
+def update(d):
+    d["a"]=10
+data={"a":5}
+update(data)
+print(data["a"])
+A) 5
+B) 10
+C) None
+D) Error
+
+26.
+def get_value(d,key):
+    return d.get(key,0)
+print(get_value({"a":5},"b"))
+A) None
+B) 5
+C) 0
+D) Error
+
+27.
+def total(d):
+    s=0
+    for v in d.values():
+        s+=v
+    return s
+print(total({"a":1,"b":2}))
+A) 2
+B) 3
+C) 1
+D) Error
+
+28.
+def double(x):
+    return x*2
+print(double(double(2)))
+A) 4
+B) 6
+C) 8
+D) Error
+
+29.
+def hello(name):
+    print("Hello", name)
+hello("Amy")
+A) Hello Amy
+B) None
+C) Hello Amy None
+D) Error
+
+30.
+def f():
+    return 3
+x=f()
+print(x+2)
+A) 3
+B) 5
+C) None
+D) Error
+
+
+------------------------------------------------------------
+SECTION D: 5 Predict the Output (Write exact output)
+------------------------------------------------------------
+
+31.
+def add(a,b):
+    return a+b
+print(add(5,2))
+
+32.
+d={"a":1,"b":2}
+for k in d:
+    print(k,d[k])
+
+33.
+def test(x):
+    x+=1
+    return x
+y=5
+print(test(y))
+print(y)
+
+34.
+def get_score(d):
+    return d.get("math",0)
+print(get_score({"english":80}))
+
+35.
+d={"x":2}
+d["y"]=4
+print(len(d))
+
+
+------------------------------------------------------------
+SECTION E: 5 Small Coding Challenges (Dictionary + Function)
+------------------------------------------------------------
+
+36. Write a function that takes a dictionary of student scores and returns the highest score.
+
+37. Write a function that takes a dictionary and returns a list of all keys.
+
+38. Write a function that counts how many values are greater than 50 in a dictionary.
+
+39. Write a function that checks if a key exists in a dictionary and returns True or False.
+
+40. Write a function that calculates the total of all values in a dictionary.
+
+
+------------------------------------------------------------
+SECTION F: 10 Coding Challenges (Functions + Parameters + Return)
+------------------------------------------------------------
+
+41. Write a function that returns the square of a number.
+
+42. Write a function that returns the cube of a number.
+
+43. Write a function that takes two numbers and returns the larger one.
+
+44. Write a function that takes a name and returns "Hello, <name>".
+
+45. Write a function that takes a list and returns its length.
+
+46. Write a function that takes a dictionary and returns the number of keys.
+
+47. Write a function that takes a dictionary and returns the smallest value.
+
+48. Write a function that takes a number and returns True if even, False if odd.
+
+49. Write a function that takes a dictionary and returns the average of values.
+
+50. Write a function that takes a dictionary and a key and returns the value (or -1 if not found).
