@@ -1,5 +1,8 @@
 import os
 
+cw = os.getcwd()
+print(cw)
+
 menu_string = """
 Menu:
 1. Create a new task file
@@ -11,15 +14,15 @@ Menu:
 
 Enter your choice:
 """
-TASK_FILE = "tasks.txt"
+TASK_FILE = os.path.join(cw, "tasks.txt")
 
 def write_new_file():
-    with open("tasks.txt","w") as file:
+    with open(TASK_FILE,"w") as file:
         file.write("My Task List")
     print("Task list file created.")
 
 def view_all_tasks():
-    with open("tasks.txt", "r") as file:
+    with open(TASK_FILE, "r") as file:
         lines = file.readlines()
         for i in range(len(lines)):
             if i == 0:
@@ -37,7 +40,7 @@ def add_new_task():
 y_n_options = ["y","n"]
 def intialise_file_task():
     if os.path.exists("tasks.txt"):
-        print(f"Task file 'tasks.txt' already exits.")
+        print(f"Task file '{TASK_FILE}' already exits.")
         while True:
             option_y_n = input("Overwrite? (y/n): ").lower().strip()
 
