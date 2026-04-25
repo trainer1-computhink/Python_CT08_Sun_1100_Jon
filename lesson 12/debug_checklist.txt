@@ -1,0 +1,17 @@
+# Syntax / Indentation Errors
+# 1. for i in range(len(students)) missing :
+# 2. status = "Fail" is wrongly indented
+# 3. else block indentation is wrong
+
+# Runtime Errors
+# 1. students[i][4] causes IndexError
+# 2. total_score is not defined
+# 3. average = total_scores / count causes TypeError
+# 4. print("Highest..." + highest) causes TypeError
+# 5. final print joins string + int
+
+# Logic Errors
+# 1. count = len(students[0]) gives number of items in one row, not number of students
+# 2. if total > 150 should be total >= 150
+# 3. result_summary appends status before total, wrong order
+# 4. range step should be 3, not 2

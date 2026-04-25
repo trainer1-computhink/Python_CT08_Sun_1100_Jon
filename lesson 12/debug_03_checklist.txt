@@ -1,0 +1,104 @@
+# =========================
+# Syntax / Indentation Errors
+# =========================
+
+# 1. Missing colon
+while choice != 7
+
+# 2. Wrong assignment operator
+if choice = 1:
+
+# 3. Missing colon
+elif choice == 2
+
+# 4. Missing colon
+else
+
+# 5. Mis-indented block (search else)
+else:
+print(name + " not found")
+
+# 6. Mis-indented code block under elif choice == 2
+
+# 7. Inconsistent indentation inside menu blocks
+
+
+# =========================
+# Runtime Errors
+# =========================
+
+# 1. Undefined variable
+students.append(score)
+
+# 2. Wrong dictionary key/value mapping
+scores[mark] = name
+
+# 3. Undefined variable
+if name in student:
+
+# 4. Wrong variable type (string + int)
+print(name + " scored " + scores[name])
+
+# 5. Wrong use of pop on list
+students.pop(name)
+
+# 6. Undefined variable
+scores.pop(index)
+
+# 7. Invalid dictionary access
+scores[i]
+
+# 8. Index out of range
+range(len(students) + 1)
+
+# 9. Undefined variable
+print("Final students:", student)
+
+# 10. String + dictionary
+print("Final scores: " + scores)
+
+# 11. String + int
+print("Total students: " + len(students))
+
+# =========================
+# Logic Errors
+# =========================
+
+# 1. choice is string but compared to integer
+choice = input(...)
+
+# 2. Wrong variable added
+students.append(score)   # should add name
+
+# 3. Wrong dictionary mapping
+scores[mark] = name      # should be scores[name] = mark
+
+# 4. Missing int conversion
+mark = input(...)        # should convert to int
+
+# 5. Wrong update operator
+scores[name] == new_mark # should be =
+
+# 6. Removal logic incorrect
+students.pop(name)       # should use index
+
+# 7. Wrong dictionary removal
+scores.pop(index)        # should use name
+
+# 8. Pass condition incorrect
+if mark > 50             # should be >= 50
+
+# 9. Highest logic reversed
+if mark < highest
+
+# 10. Lowest logic reversed
+if mark > lowest
+
+# 11. Printing swapped values
+Highest printed as lowest, and vice versa
+
+# 12. Wrong indexing when printing list
+name = students[i + 1]
+
+# 13. Wrong dictionary lookup
+scores[i] instead of scores[name]

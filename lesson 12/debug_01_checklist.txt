@@ -1,0 +1,20 @@
+# Syntax / indentation errors:
+# 1. Missing ":" after with open(...)
+# 2. mark = student_results[name] is not indented
+# 3. Bad indentation before if mark > 50
+
+# Run-time errors:
+# 1. parts[2] gives IndexError because each line has only 2 parts
+# 2. marks is not defined
+# 3. student_result is not defined
+# 4. len(student_results) is int, cannot combine with string
+# 5. five_marks_away_count is int, cannot combine with string
+
+# Logic errors:
+# 1. name = parts[1] should be parts[0]
+# 2. mark should be converted to int
+# 3. if mark > 50 should be mark >= 50
+# 4. fail_students[mark] = name should be fail_students[name] = mark
+# 5. failure and passing counts are swapped
+# 6. distinction should be mark >= 90, not mark > 90
+# 7. 85/80/75 ranges should include the lower bound properly

@@ -1,0 +1,66 @@
+# =========================
+# Syntax / Indentation Errors
+# =========================
+
+# 1. while choice != 6
+#    Missing :
+
+# 2. if choice = 1:
+#    Uses = instead of ==
+
+# 3. elif choice == 2
+#    Missing :
+
+# 4. position = int(input(...)) under elif choice == 3 is not indented properly
+
+# 5. if search_item not cart:
+#    Missing "in"
+
+# 6. else
+#    Missing :
+
+
+# =========================
+# Runtime Errors
+# =========================
+
+# 1. choice = input(...)
+#    choice is a string, but menu checks compare with integers
+
+# 2. cart.insert(item)
+#    insert() needs 2 arguments: index and item
+
+# 3. position = input(...)
+#    cart.pop(position) uses a string index
+
+# 4. print("Removed: " + removed)
+#    removed variable does not exist
+
+# 5. for i in range(len(cart) + 1):
+#    cart[i] will eventually go out of range
+
+# 6. print("Final cart: " + cart)
+#    Cannot join string + list
+
+
+# =========================
+# Logic Errors
+# =========================
+
+# 1. choice starts as 0, but after input it becomes string.
+#    The loop condition choice != 6 may not behave as intended.
+
+# 2. Removing by position should usually adjust user position:
+#    position 1 means index 0.
+
+# 3. Updating item:
+#    cart[position] == new_item compares instead of assigning.
+
+# 4. Search logic is reversed:
+#    if item is NOT in cart, it prints that it IS in cart.
+
+# 5. Printing numbering starts from 0 instead of 1.
+
+# 6. Remove/update should check whether position is valid before using it.
+
+# 7. Add item should add to the end of the cart, not insert without position.
